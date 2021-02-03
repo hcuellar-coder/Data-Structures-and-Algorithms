@@ -27,6 +27,23 @@ function twoNumberSum2(array, targetSum) {
     return [];
 }
 
+function twoNumberSum3(array, targetSum) {
+    array.sort((a, b) => a - b);
+    let left = 0;
+    let right = array.length - 1;
+    while (left < right) {
+        currentSum = array[left] + array[right];
+        if (currentSum === targetSum) {
+            return [array[left], array[right]];
+        } else if (currentSum < targetSum) {
+            left++;
+        } else if (currentSum > targetSum) {
+            right--;
+        }
+    }
+    return [];
+}
+
 let t0 = performance.now();
 console.log(twoNumberSum1(array, targetSum));
 let t1 = performance.now();
@@ -36,3 +53,8 @@ let t2 = performance.now();
 console.log(twoNumberSum2(array, targetSum));
 let t3 = performance.now();
 console.log("time to execute = " + (t3 - t2) + "milliseconds.");
+
+let t4 = performance.now();
+console.log(twoNumberSum3(array, targetSum));
+let t5 = performance.now();
+console.log("time to execute = " + (t5 - t4) + "milliseconds.");
