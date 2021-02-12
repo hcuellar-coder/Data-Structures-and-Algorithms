@@ -1,7 +1,7 @@
 const { performance } = require('perf_hooks');
 
-let array = [3, 5, -4, 8, 11, 1, -1, 6];
-let targetSum = 10;
+let array = [3, 5, -4, 8, 11, 1, -1, 6, -21, 301, 12, 4, 65, 56, 210, 356, 9, -47];
+let targetSum = 163;
 
 function twoNumberSum1(array, targetSum) {
     for (i = 0; i < array.length; i++) {
